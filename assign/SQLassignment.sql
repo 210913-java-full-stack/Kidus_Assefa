@@ -1,4 +1,65 @@
 ###########################################################
+##################### TEST YOUR SKILLS ####################
+##This is the my answer for the assignment ####
+
+###########################################################
+## 1. customers with the last name "Smith". 
+SELECT * FROM customers c WHERE name LIKE '%Smith'
+
+## 2. Get the total balance of all accounts held by the Smiths.
+
+SELECT sum(a.balance) FROM accounts a 
+JOIN accounts_customers ac on ac.account_id = a.account_id 
+JOIN customers c on ac.customer_id = c.customer_id 
+WHERE c.name LIKE '%Smith'
+
+## 3. Get the name and address of any customer with less than $50 in an account. (No duplicates!)
+
+SELECT DISTINCT c.name , ad.address, a.balance FROM accounts a 
+JOIN accounts_customers ac on ac.account_id = a.account_id 
+JOIN customers c on ac.customer_id = c.customer_id 
+JOIN address ad on ad.address_id = c.address_id 
+WHERE a.balance < 50 ;
+
+## 4. Get a list of all the customers who live in Texas.
+SELECT * FROM customers c 
+JOIN address a on a.address_id = c.address_id 
+WHERE a.state = 'TX';
+
+## 5. Add $100 gift to any accounts belonging to customers in New York
+UPDATE accounts a
+JOIN accounts_customers ac on ac.account_id = a.account_id 
+JOIN customers c on c.customer_id = ac.customer_id 
+JOIN address ad on ad.address_id = c.address_id set a.balance=balance + 100 
+WHERE ad.state ='NY';
+
+## 6. Transfer $199.99 from Jason Smith to Amanda Smith
+UPDATE accounts a 
+JOIN accounts_customers ac on ac.account_id = a.account_id 
+JOIN customers c on c.customer_id = ac.customer_id 
+SET a.balance=balance - 199.99 
+WHERE c.customer_id =1;
+
+UPDATE accounts a 
+JOIN accounts_customers ac on ac.account_id = a.account_id 
+JOIN customers c on c.customer_id = ac.customer_id 
+SET a.balance = balance + 199.99 
+WHERE c.customer_id = 2;
+
+## 7. Change Amanda Smith's last name to "Lastname"
+
+UPDATE customers 
+set name=REPLACE('Amanda Smith','Smith','Lastname')
+ WHERE customer_id =2;
+
+##########################################################
+
+
+##
+##
+##
+##
+###########################################################
 ################## CREATE FRESH DATABASE ##################
 ###########################################################
 DROP DATABASE IF EXISTS Kidus_DB;
