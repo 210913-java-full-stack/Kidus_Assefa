@@ -12,7 +12,7 @@ public class PingServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setStatus(202);
-        resp.getWriter().print("Pong!");
+        resp.setStatus(200);
+        resp.getWriter().print("Pong! Servlet Example is working well");
     }
 }
