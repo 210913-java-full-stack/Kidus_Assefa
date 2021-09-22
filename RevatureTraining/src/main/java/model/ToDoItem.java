@@ -1,25 +1,43 @@
-package models;
+package model;
 
 public class ToDoItem {
-    private String toDoText;
+    private int id;
+    private String message;
     private boolean complete;
 
     public ToDoItem() {
+        complete = false;
+    }
+
+    public ToDoItem(String message) {
+        complete = false;
+        this.id = id;
+        this.message = message;
 
     }
 
-    public ToDoItem(String toDoText)
-    {
-        this.toDoText = toDoText;
+    public ToDoItem(int id, String message) {
+        complete = false;
+        this.id = id;
+        this.message = message;
+
     }
 
-    public String getToDoText()
-    {
-        return toDoText;
+
+    public int getId() {
+        return id;
     }
 
-    public void setToDoText(String toDoText) {
-        this.toDoText = toDoText;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public boolean isComplete() {
@@ -29,7 +47,9 @@ public class ToDoItem {
     public void setComplete(boolean complete) {
         this.complete = complete;
     }
-/*
+
+
+    /*
     This is a list of the 8 java primitive types and the wrapper classes that correspond to them. ~-2,140,000 - ~2,140,000
      */
 //    public int i; //whole number value, 32-bits signed
