@@ -1,6 +1,5 @@
 ###########################################################
-##################### TEST YOUR SKILLS ####################
-##This is my answer for the assignment ####
+##################### TEST YOUR SKILLS ###################
 
 ###########################################################
 ## 1. customers with the last name "Smith". 
@@ -39,7 +38,6 @@ JOIN accounts_customers ac on ac.account_id = a.account_id
 JOIN customers c on c.customer_id = ac.customer_id 
 SET a.balance=balance - 199.99 
 WHERE c.customer_id =1 AND a.account_id =900002;
-
 # To remaind  I just add implementation with AND command
 # I see that Jason Smith have more balance on this account
 
@@ -48,7 +46,6 @@ JOIN accounts_customers ac on ac.account_id = a.account_id
 JOIN customers c on c.customer_id = ac.customer_id 
 SET a.balance = balance + 199.99 
 WHERE c.customer_id =2 AND a.account_id =900004;
-
 # I add customer Id just to remaind Amanda's account ID is  belonges to customer ID 2
 # I see Amanda Smith have less balance on this account 
 
