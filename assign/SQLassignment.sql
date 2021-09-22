@@ -1,6 +1,6 @@
 ###########################################################
 ##################### TEST YOUR SKILLS ###################
-
+## Here is my answer for SQL assignment below
 ###########################################################
 ## 1. customers with the last name "Smith". 
 SELECT * FROM customers c WHERE name LIKE '%Smith'
