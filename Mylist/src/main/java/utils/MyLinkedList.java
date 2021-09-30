@@ -1,6 +1,6 @@
 package utils;
 
-public class MyLinkedList <E> implements MyListInterface<E>{
+public class MyLinkedList<E> implements MyListInterface<E>{
     private Node head;
     private int size;
     public MyLinkedList(){
@@ -33,8 +33,8 @@ public class MyLinkedList <E> implements MyListInterface<E>{
         if(index>size){
             throw new IndexOutOfBoundsException("index: "+ index + " is out of bound");
         }
-        Node cursor=head;
-        for (int i=0 ;i<=index;i++){
+        Node cursor = head;
+        for (int i = 1;i < index;i++){
             cursor=cursor.next;
 
         }
@@ -55,7 +55,7 @@ public class MyLinkedList <E> implements MyListInterface<E>{
 
     @Override
     public int contain(E e) {
-        Node cursor=head;
+        Node cursor = head;
        for (int i=0;i<size;i++){
             if(e.equals(cursor.e)){
                return i;
@@ -65,9 +65,9 @@ public class MyLinkedList <E> implements MyListInterface<E>{
     }
     private void addNewNode(Node n){
         if (size==0){
-            head=n;
+            head = n;
         }else{
-            Node cursor=head;
+            Node cursor= head;
             while (cursor.next != null){
                 cursor=cursor.next;
             }
@@ -82,7 +82,7 @@ public class MyLinkedList <E> implements MyListInterface<E>{
             throw new IndexOutOfBoundsException("index: "+ index + " is out of bound");
         }
         //
-        Node cursor=head;
+        Node cursor = head;
         for(int i = 0; i <= index; i++){
             cursor=cursor.next;
 
@@ -101,7 +101,7 @@ public class MyLinkedList <E> implements MyListInterface<E>{
         if(index>=size){
             throw new IndexOutOfBoundsException();
         }
-        Node cursor=head;
+        Node cursor = head;
         for (int i = 0; i < index; i++){
             cursor=cursor.next;
 
