@@ -1,7 +1,3 @@
-DROP TABLE IF EXISTS customers;
-DROP TABLE IF EXISTS customers_to_accounts;
-DROP TABLE IF EXISTS accounts;
-
 CREATE TABLE bank_accounts
 (
 	account_id INT AUTO_INCREMENT,
